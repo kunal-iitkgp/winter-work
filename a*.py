@@ -4,6 +4,7 @@ import numpy
 from math import sqrt
 import time
 
+
 start_x,start_y = [ int(i) for i in raw_input().strip().split()]
 end_x,end_y = [ int(i) for i in raw_input().strip().split()]
 r,c = [ int(i) for i in raw_input().strip().split()]
@@ -11,6 +12,8 @@ r,c = [ int(i) for i in raw_input().strip().split()]
 grid_1=[]
 for i in xrange(0,r):
 	grid_1.append(raw_input())
+
+start_time = time.time()
 grid = numpy.empty((r,c), dtype = str )
 
 for i in range(0,r):
@@ -26,15 +29,15 @@ parent = numpy.empty((r,c), dtype = tuple )
 #grid=numpy.array(grid)
 
 #print grid 
-print visited
-print grid
+#print visited
+#print grid
 
 def MoveCost((x_1,y_1),(x_2,y_2)):
 	return int(sqrt((x_2-x_1)**2 + (y_2 - y_1)**2) * 10)
 
 def heuristicCost(x,y):
 	global end_x,end_y
-	return abs(end_x - x) + abs(end_y - y)
+	return (abs(end_x - x) + abs(end_y - y))
 
 h_cost[start_x][start_y] = heuristicCost(start_x,start_y)
 g_cost[start_x][start_y] = 0
@@ -46,7 +49,7 @@ visited[start_x][start_y]=1
 
 
 while 1:
-	print heap
+	#print heap
 	
 	#print visited 
 
@@ -292,6 +295,9 @@ print len(queue1)-1
 for i in range(0,len(queue1)):
 	p,q=queue1.pop()
 	print int(p),int(q)
+
+print time.time()-start_time , "time"
+print "yes"
 
 				
 

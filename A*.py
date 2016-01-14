@@ -71,7 +71,7 @@ while 1:
 				    
 
 				else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x,y+1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -101,7 +101,7 @@ while 1:
 					list_q.put(temp_node)
 
 				else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x,y-1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -128,7 +128,7 @@ while 1:
 					list_q.put(temp_node)
 
 				else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x,y+1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -155,7 +155,7 @@ while 1:
 				    list_q.put(temp_node)
 
 				else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x,y-1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -179,7 +179,7 @@ while 1:
 				    list_q.put(temp_node)
 
 			else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x+1,y-1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -200,10 +200,10 @@ while 1:
 				    temp_node.parent = current_node.location
 				    temp_node.location = (x-1,y-1)
 
-				    list_q.location.put(temp_node)
+				    list_q.put(temp_node)
 
 				else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x-1,y-1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -227,7 +227,7 @@ while 1:
 				    list_q.put(temp_node)
 
 			else :
-					for item in list_q.location:
+					for item in list_q:
 					    if item.location == (x,y) :
 					    	upd_g = current_node.g_cost + MoveCost((x-1,y+1),(x,y))
 					    	if  upd_g < item.g_cost:
@@ -239,7 +239,6 @@ while 1:
 					    		break 
 	print visited 
 	print current_node.location
-
 
 
 
